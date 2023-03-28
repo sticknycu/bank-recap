@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ro.pao.model.Client;
 import ro.pao.service.ClientService;
-import ro.pao.service.MailService;
 
 import java.util.ArrayList;
 import java.util.List;

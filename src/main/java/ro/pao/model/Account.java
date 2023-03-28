@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.experimental.SuperBuilder;
 import ro.pao.model.abstracts.AbstractEntity;
 import ro.pao.model.enums.AccountType;
-import ro.pao.model.enums.ClientType;
 
 import java.math.BigDecimal;
 import java.util.UUID;

@@ -2,10 +2,8 @@ package ro.pao.model;
 
 import lombok.*;
 import ro.pao.model.abstracts.AbstractEntity;
-import ro.pao.model.enums.ClientType;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +22,5 @@ public class Client extends AbstractEntity {
 
     private LocalDateTime birthInformation;
 
-    private List<MailInformation> mailList;
-
-    private ClientType clientType;
+    private String mail;
 }

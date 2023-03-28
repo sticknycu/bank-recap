@@ -2,15 +2,11 @@ package ro.pao.application;
 
 import ro.pao.model.Account;
 import ro.pao.model.Client;
-import ro.pao.model.MailInformation;
 import ro.pao.model.enums.AccountType;
-import ro.pao.model.enums.ClientType;
 import ro.pao.service.AccountService;
 import ro.pao.service.ClientService;
-import ro.pao.service.MailService;
 import ro.pao.service.impl.AccountServiceImpl;
 import ro.pao.service.impl.ClientServiceImpl;
-import ro.pao.service.impl.MailServiceImpl;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -28,7 +24,6 @@ public class Menu {
     private static Menu INSTANCE;
 
     private final AccountService accountService = new AccountServiceImpl();
-    private final MailService mailService = new MailServiceImpl();
     private final ClientService clientService = new ClientServiceImpl();
 
     public static Menu getInstance() {
@@ -44,6 +39,26 @@ public class Menu {
 
         System.out.println(intro);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /** EXEMPLE:
         Account account = Account.builder()
                 .id(UUID.randomUUID())
                 .creationDate(LocalDate.now()) // data de azi
@@ -53,8 +68,8 @@ public class Menu {
                 .build();
 
         Client client = Client.builder()
-                .clientType(ClientType.PERSONAL)
-                .mailList(List.of(new MailInformation("example1", "example2"), new MailInformation("example3", "example4")))
+              //  .clientType(ClientType.PERSONAL)
+               // .mailList(List.of(new MailInformation("example1", "example2"), new MailInformation("example3", "example4")))
                 .firstName("Gigel")
                 .lastName("Florin")
                 .birthLocation("Bucuresti")
@@ -95,5 +110,7 @@ public class Menu {
         accountService.removeElementById(account.getId());
         accountService.getAllFromList()
                 .forEach(elementFromList -> System.out.println(elementFromList));
+
+         */
     }
 }

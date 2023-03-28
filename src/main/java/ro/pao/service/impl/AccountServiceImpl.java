@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -30,7 +31,19 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Optional<Account> getById(UUID id) {
-        return Optional.empty();
+
+        /*for (var account : accountList) {
+            if (account.getId() == id) {
+                return Optional.of(account);
+            } else {
+                return Optional.empty();
+            }
+        }*/
+
+        return accountList.stream()
+                .filter(account -> account.getId().equals(id))
+                .findAny();
+
     }
 
     @Override
@@ -45,7 +58,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void addAllFromGivenList(List<Account> accountList) {
-        AccountServiceImpl.accountList.addAll(accountList);
+        accountList.addAll(accountList);
     }
 
     @Override
