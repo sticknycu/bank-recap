@@ -3,7 +3,6 @@ package ro.pao.service;
 import org.junit.jupiter.api.Test;
 import ro.pao.application.Menu;
 import ro.pao.model.Account;
-import ro.pao.service.impl.AccountServiceImpl;
 
 import java.util.UUID;
 

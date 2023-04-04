@@ -18,7 +18,7 @@ import java.util.UUID;
  * In acel serviciu se apeleaza doar metode pe obiectul 'Animal'.
  * De exemplu: "getAnimalById", "removeAnimalById" etc.
  */
-public interface AccountService {
+public sealed interface AccountService permits AccountServiceImpl {
 
     Optional<Account> getById(UUID id);
 
