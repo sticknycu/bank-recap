@@ -1,5 +1,6 @@
 package ro.pao.application;
 
+import lombok.SneakyThrows;
 import ro.pao.exceptions.UserNotFoundException;
 import ro.pao.service.AccountService;
 import ro.pao.service.ClientService;
@@ -21,7 +22,7 @@ public class Menu {
 
     private static Menu INSTANCE;
 
-    private final AccountService accountService = new AccountServiceImpl();e
+    private final AccountService accountService = new AccountServiceImpl();
     private final ClientService clientService = new ClientServiceImpl();
 
     public static Menu getInstance() {
@@ -30,10 +31,21 @@ public class Menu {
 
     private Menu() {}
 
+    public void metoda2() {
+        intro();
+    }
+
+    @SneakyThrows
     public void intro() {
         String intro = """
                 Intro example
                 """;
+
+
+        if (intro.equals("ddd")) {
+            var exception = new UserNotFoundException("Eroare eroare");
+            logger.log(Level.SEVERE, exception.getMessage());
+        }
 
         try {
 
