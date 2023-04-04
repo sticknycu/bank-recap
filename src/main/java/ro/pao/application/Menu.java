@@ -1,17 +1,13 @@
 package ro.pao.application;
 
-import ro.pao.model.Account;
-import ro.pao.model.Client;
-import ro.pao.model.enums.AccountType;
+import ro.pao.exceptions.UserNotFoundException;
 import ro.pao.service.AccountService;
 import ro.pao.service.ClientService;
-import ro.pao.service.impl.AccountServiceImpl;
+import ro.pao.service.AccountServiceImpl;
 import ro.pao.service.impl.ClientServiceImpl;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * In Meniu se fac operatiile care pot lua informatii din toate dintre servicile definite.
@@ -21,9 +17,11 @@ import java.util.UUID;
  */
 public class Menu {
 
+    private static Logger logger;
+
     private static Menu INSTANCE;
 
-    private final AccountService accountService = new AccountServiceImpl();
+    private final AccountService accountService = new AccountServiceImpl();e
     private final ClientService clientService = new ClientServiceImpl();
 
     public static Menu getInstance() {
@@ -36,6 +34,12 @@ public class Menu {
         String intro = """
                 Intro example
                 """;
+
+        try {
+
+        } catch (UserNotFoundException e) {
+            logger.log(Level.SEVERE, e.getMessage());
+        }
 
         System.out.println(intro);
 

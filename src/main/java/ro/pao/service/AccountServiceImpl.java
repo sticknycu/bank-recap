@@ -1,4 +1,4 @@
-package ro.pao.service.impl;
+package ro.pao.service;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 @NoArgsConstructor
 @Getter
-public class AccountServiceImpl implements AccountService {
+public final class AccountServiceImpl implements AccountService {
 
     /**
      * Atentie sa fie static. Daca nu o sa fie static, fiecare instanta va avea propria ei lista si astfel vor aparea probleme la apelarea metodelor.
